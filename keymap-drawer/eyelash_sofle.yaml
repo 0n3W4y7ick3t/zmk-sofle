@@ -1,6 +1,6 @@
 layers:
   LAYER0:
-  - $$mdi:alpha-w-box$$
+  - '&shift_caps'
   - {t: '1', s: '!'}
   - {t: '2', s: '@'}
   - {t: '3', s: '#'}
