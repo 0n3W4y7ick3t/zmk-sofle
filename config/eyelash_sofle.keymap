@@ -39,12 +39,25 @@
         };
     };
 
-    scroll_encoder: scroll_encoder {
+    shift_caps: shift_caps {
+        compatible = "zmk,behavior-tap-dance";
+        label = "SHIFT_CAPS";
+        #binding-cells = <0>;
+        bindings = <&kp LEFT_SHIFT>, <&kp CAPS>;
+    };
+
+    volumn: volumn {
         compatible = "zmk,behavior-sensor-rotate";
+        label = "VOLUMN";
+        #sensor-binding-cells = <0>;
+        bindings = <&kp C_VOL_UP>, <&kp C_VOL_DN>;
+    };
+
+    mouse_scroll: mouse_scroll {
+        compatible = "zmk,behavior-sensor-rotate";
+        label = "MOUSE_SCROLL";
         #sensor-binding-cells = <0>;
         bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
-
-        tap-ms = <30>;
     };
 
     keymap {
@@ -52,14 +65,14 @@
 
         layer0 {
             bindings = <
-&caps_word  &kp N1     &kp N2        &kp N3        &kp N4  &kp N5       &kp UP_ARROW     &kp N6     &kp N7     &kp N8     &kp N9           &kp N0      &kp BACKSPACE
-&kp TAB     &kp Q      &kp W         &kp F         &kp P   &kp B        &kp DOWN_ARROW   &kp J      &kp L      &kp U      &kp Y            &kp SEMI    &kp BSLH
-&kp ESC     &kp A      &kp R         &kp S         &kp T   &kp G        &kp LEFT_ARROW   &kp M      &kp N      &kp E      &kp I            &kp O       &kp APOS
-&kp LSHFT   &kp Z      &kp X         &kp C         &kp D   &kp V        &kp RIGHT_ARROW  &kp K      &kp H      &kp COMMA  &kp DOT          &kp FSLH    &kp ENTER
-&kp C_MUTE  &kp LCTRL  &kp LEFT_GUI  &kp LEFT_ALT  &mo 1   &kp SPACE    &kp ENTER        &kp SPACE  &kp ENTER  &mo 2      &kp RIGHT_SHIFT  &kp DELETE
+&shift_caps  &kp N1     &kp N2        &kp N3        &kp N4  &kp N5       &kp UP_ARROW     &kp N6     &kp N7     &kp N8     &kp N9           &kp N0      &kp BACKSPACE
+&kp TAB      &kp Q      &kp W         &kp F         &kp P   &kp B        &kp DOWN_ARROW   &kp J      &kp L      &kp U      &kp Y            &kp SEMI    &kp BSLH
+&kp ESC      &kp A      &kp R         &kp S         &kp T   &kp G        &kp LEFT_ARROW   &kp M      &kp N      &kp E      &kp I            &kp O       &kp APOS
+&kp LSHFT    &kp Z      &kp X         &kp C         &kp D   &kp V        &kp RIGHT_ARROW  &kp K      &kp H      &kp COMMA  &kp DOT          &kp FSLH    &kp ENTER
+&kp C_MUTE   &kp LCTRL  &kp LEFT_GUI  &kp LEFT_ALT  &mo 1   &kp SPACE    &kp ENTER        &kp SPACE  &kp ENTER  &mo 2      &kp RIGHT_SHIFT  &kp DELETE
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
+            sensor-bindings = <&mouse_scroll>;
             display-name = "LAYER0";
         };
 
@@ -73,7 +86,7 @@
             >;
 
             display-name = "layer1";
-            sensor-bindings = <&scroll_encoder>;
+            sensor-bindings = <&volumn>;
         };
 
         layer_2 {
@@ -85,7 +98,7 @@
 &trans     &trans        &trans          &trans        &trans        &trans          &mkp LCLK        &trans  &trans  &trans      &trans     &trans
             >;
 
-            sensor-bindings = <&scroll_encoder>;
+            sensor-bindings = <&volumn>;
         };
     };
 };
