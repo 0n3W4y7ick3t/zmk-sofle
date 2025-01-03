@@ -46,13 +46,6 @@
         bindings = <&kp LEFT_SHIFT>, <&kp CAPS>;
     };
 
-    volumn: volumn {
-        compatible = "zmk,behavior-sensor-rotate";
-        label = "VOLUMN";
-        #sensor-binding-cells = <0>;
-        bindings = <&kp C_VOL_UP>, <&kp C_VOL_DN>;
-    };
-
     mouse_scroll: mouse_scroll {
         compatible = "zmk,behavior-sensor-rotate";
         label = "MOUSE_SCROLL";
@@ -88,7 +81,7 @@
             >;
 
             display-name = "layer1";
-            sensor-bindings = <&volumn>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         layer_2 {
@@ -100,7 +93,7 @@
 &trans     &trans        &trans          &trans        &trans        &trans          &mkp LCLK        &trans  &trans  &trans      &trans     &trans
             >;
 
-            sensor-bindings = <&volumn>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
     };
 };
