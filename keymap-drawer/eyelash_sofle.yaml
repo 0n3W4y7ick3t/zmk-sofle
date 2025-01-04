@@ -116,7 +116,7 @@ layers:
   - Ins
   - F11
   - F12
-  - {t: '$$mdi:transfer$$', type: trans}
+  - '&studio_unlock'
   - $$mdi:volume-off$$
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
