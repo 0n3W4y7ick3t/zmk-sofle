@@ -51,7 +51,9 @@
         compatible = "zmk,behavior-sensor-rotate";
         label = "MOUSE_SCROLL";
         #sensor-binding-cells = <0>;
-        bindings = <&msc MOVE_Y(-ZMK_MOUSE_SCRL_VAL)>, <&msc MOVE_Y(ZMK_MOUSE_SCRL_VAL)>;
+        bindings =
+            <&msc MOVE_Y(-ZMK_MOUSE_SCRL_VAL)>,
+            <&msc MOVE_Y(ZMK_MOUSE_SCRL_VAL)>;
 
         tap-ms = <20>;
     };
@@ -113,11 +115,11 @@
 
         fn {
             bindings = <
-&kp F12          &kp F1           &kp F2           &kp F3           &kp F4           &kp F5      &mmv MOVE_UP     &kp F6           &kp F7     &kp F8         &kp F9     &kp F10           &kp F11
-&rgb_ug RGB_TOG  &trans           &mkp LCLK        &mkp MCLK        &mkp RCLK        &mkp MB4    &mmv MOVE_DOWN   &kp KP_PLUS      &kp KP_N7  &kp KP_N8      &kp KP_N9  &kp MINUS         &kp EQUAL
-&rgb_ug RGB_EFF  &rgb_ug RGB_SAI  &rgb_ug RGB_HUI  &rgb_ug RGB_BRI  &rgb_ug RGB_SPI  &mkp MB5    &mmv MOVE_LEFT   &kp KP_SUBTRACT  &kp KP_N4  &kp KP_N5      &kp KP_N6  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
-&rgb_ug RGB_EFR  &rgb_ug RGB_SAD  &rgb_ug RGB_HUD  &rgb_ug RGB_BRD  &rgb_ug RGB_SPD  &trans      &mmv MOVE_RIGHT  &kp KP_MULTIPLY  &kp KP_N1  &kp KP_N2      &kp KP_N3  &kp PAGE_UP       &kp PG_DN
-&kp C_MUTE       &trans           &trans           &trans           &trans           &trans      &mkp LCLK        &trans           &trans     &kp KP_DIVIDE  &kp KP_N0  &kp KP_DOT
+&kp F12          &kp F1           &kp F2           &kp F3           &kp F4           &kp F5      &mmv MOVE_UP     &kp F6           &kp F7         &kp F8         &kp F9     &kp F10           &kp F11
+&rgb_ug RGB_TOG  &trans           &mkp LCLK        &mkp MCLK        &mkp RCLK        &mkp MB4    &mmv MOVE_DOWN   &kp KP_PLUS      &kp KP_N7      &kp KP_N8      &kp KP_N9  &kp MINUS         &kp EQUAL
+&rgb_ug RGB_EFF  &rgb_ug RGB_SAI  &rgb_ug RGB_HUI  &rgb_ug RGB_BRI  &rgb_ug RGB_SPI  &mkp MB5    &mmv MOVE_LEFT   &kp KP_SUBTRACT  &kp KP_N4      &kp KP_N5      &kp KP_N6  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
+&rgb_ug RGB_EFR  &rgb_ug RGB_SAD  &rgb_ug RGB_HUD  &rgb_ug RGB_BRD  &rgb_ug RGB_SPD  &trans      &mmv MOVE_RIGHT  &kp KP_MULTIPLY  &kp KP_N1      &kp KP_N2      &kp KP_N3  &kp PAGE_UP       &kp PG_DN
+&kp C_MUTE       &trans           &trans           &trans           &trans           &trans      &mkp LCLK        &trans           &kp BACKSPACE  &kp KP_DIVIDE  &kp KP_N0  &kp KP_DOT
             >;
 
             display-name = "fn";
