@@ -51,7 +51,7 @@ layers:
   - {t: ',', s: <}
   - {t: ., s: '>'}
   - {t: /, s: '?'}
-  - $$mdi:alpha-w-box$$
+  - '&shift_caps_word'
   - PLAY PAUSE
   - $$mdi:apple-keyboard-control$$
   - $$mdi:apple-keyboard-command$$
@@ -116,7 +116,7 @@ layers:
   - W
   - V
   - Z
-  - $$mdi:alpha-w-box$$
+  - '&shift_caps_word'
   - PLAY PAUSE
   - $$mdi:apple-keyboard-control$$
   - $$mdi:apple-keyboard-command$$
@@ -246,7 +246,7 @@ layers:
   - {t: ',', s: <}
   - {t: ., s: '>'}
   - {t: /, s: '?'}
-  - $$mdi:alpha-w-box$$
+  - '&shift_caps_word'
   - PLAY PAUSE
   - $$mdi:apple-keyboard-control$$
   - $$mdi:apple-keyboard-command$$
