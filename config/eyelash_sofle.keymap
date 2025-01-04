@@ -21,8 +21,9 @@
 
  */
 
-#define ZMK_MOUSE_DEFAULT_MOVE_VAL 1200  // 600
-#define ZMK_MOUSE_DEFAULT_SCRL_VAL 20    // 10
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 1200  // 600
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // 10
+#define ZMK_MOUSE_SCRL_VAL 140
 
 / {
     behaviors {
@@ -50,9 +51,9 @@
         compatible = "zmk,behavior-sensor-rotate";
         label = "MOUSE_SCROLL";
         #sensor-binding-cells = <0>;
-        bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+        bindings = <&msc MOVE_Y(-ZMK_MOUSE_SCRL_VAL)>, <&msc MOVE_Y(ZMK_MOUSE_SCRL_VAL)>;
 
-        tap-ms = <30>;
+        tap-ms = <20>;
     };
 
     keymap {
