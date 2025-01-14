@@ -120,30 +120,43 @@
             sensor-bindings = <&mouse_scroll>;
         };
 
-        fn {
+        number {
             bindings = <
-&kp F12          &kp F1           &kp F2           &kp F3           &kp F4           &kp F5      &mmv MOVE_UP     &kp F6           &kp F7         &kp F8         &kp F9     &kp F10           &kp F11
-&rgb_ug RGB_TOG  &trans           &mkp LCLK        &mkp MCLK        &mkp RCLK        &mkp MB4    &mmv MOVE_DOWN   &kp KP_PLUS      &kp KP_N7      &kp KP_N8      &kp KP_N9  &kp MINUS         &kp EQUAL
-&rgb_ug RGB_EFF  &rgb_ug RGB_SAI  &rgb_ug RGB_HUI  &rgb_ug RGB_BRI  &rgb_ug RGB_SPI  &mkp MB5    &mmv MOVE_LEFT   &kp KP_SUBTRACT  &kp KP_N4      &kp KP_N5      &kp KP_N6  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
-&rgb_ug RGB_EFR  &rgb_ug RGB_SAD  &rgb_ug RGB_HUD  &rgb_ug RGB_BRD  &rgb_ug RGB_SPD  &trans      &mmv MOVE_RIGHT  &kp KP_MULTIPLY  &kp KP_N1      &kp KP_N2      &kp KP_N3  &kp PAGE_UP       &kp PG_DN
-&kp C_MUTE       &trans           &trans           &trans           &trans           &trans      &mkp LCLK        &trans           &kp BACKSPACE  &kp KP_DIVIDE  &kp KP_N0  &kp KP_DOT
+&kp F12     &kp F1  &kp F2     &kp F3         &kp F4     &kp F5      &mmv MOVE_UP     &kp F6           &kp F7     &kp F8           &kp F9     &kp F10       &kp F11
+&trans      &trans  &mkp LCLK  &mkp MCLK      &mkp RCLK  &mkp MB4    &mmv MOVE_DOWN   &kp KP_MULTIPLY  &kp KP_N7  &kp KP_N8        &kp KP_N9  &kp KP_PLUS   &kp KP_EQUAL
+&trans      &trans  &trans     &kp PAGE_UP    &trans     &mkp MB5    &mmv MOVE_LEFT   &kp KP_DIVIDE    &kp KP_N4  &kp KP_N5        &kp KP_N6  &kp KP_MINUS  &kp KP_EQUAL
+&trans      &trans  &kp HOME   &kp PAGE_DOWN  &kp END    &trans      &mmv MOVE_RIGHT  &trans           &kp KP_N1  &kp KP_N2        &kp KP_N3  &kp KP_ENTER  &kp KP_ENTER
+&kp C_MUTE  &trans  &trans     &trans         &trans     &trans      &mkp LCLK        &kp BACKSPACE    &trans     &kp KP_NUMBER_0  &kp KP_N0  &kp KP_DOT
             >;
 
-            display-name = "fn";
+            display-name = "number";
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
-        control {
+        symbol {
             bindings = <
-&to 0       &bt BT_SEL 0  &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp PG_UP  &trans  &trans  &trans      &trans     &trans       &trans
-&to 1       &bt BT_CLR    &bt BT_CLR_ALL  &trans        &trans        &trans          &kp PG_DN  &trans  &trans  &trans      &trans     &kp UNDER    &kp PLUS
-&to 2       &out OUT_USB  &out OUT_BLE    &trans        &trans        &trans          &kp HOME   &trans  &trans  &trans      &trans     &kp LBRC     &kp RBRC
-&to 3       &sys_reset    &trans          &bootloader   &trans        &trans          &kp END    &trans  &trans  &sys_reset  &soft_off  &bootloader  &trans
-&kp C_MUTE  &trans        &trans          &trans        &trans        &trans          &mkp LCLK  &trans  &trans  &trans      &trans     &trans
+&trans  &trans  &trans  &trans       &trans                &trans           &kp PG_UP  &trans           &trans                 &trans          &trans            &trans     &trans
+&trans  &trans  &trans  &kp AT_SIGN  &kp LEFT_BRACE        &kp AMPERSAND    &kp PG_DN  &kp PERCENT      &kp RIGHT_BRACE        &kp UNDERSCORE  &kp PLUS          &trans     &trans
+&trans  &trans  &trans  &kp HASH     &kp LEFT_PARENTHESIS  &kp PIPE         &kp HOME   &kp EXCLAMATION  &kp RIGHT_PARENTHESIS  &kp MINUS       &kp EQUAL         &kp COLON  &trans
+&trans  &trans  &trans  &kp DOLLAR   &kp LEFT_BRACKET      &kp CARET        &kp END    &kp ASTERISK     &kp RIGHT_BRACKET      &kp LESS_THAN   &kp GREATER_THAN  &trans     &trans
+&trans  &trans  &trans  &trans       &trans                &trans           &mkp LCLK  &kp ENTER        &kp BACKSPACE          &trans          &trans            &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
-            label = "control";
+            label = "symbol";
+        };
+
+        ctrl {
+            label = "ctrl";
+            bindings = <
+&bt BT_CLR      &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4       &trans  &trans        &trans  &trans  &trans  &trans  &trans
+&bt BT_CLR_ALL  &trans        &trans        &trans           &trans           &trans             &trans  &trans        &trans  &trans  &trans  &trans  &trans
+&trans          &trans        &trans        &trans           &trans           &trans             &trans  &trans        &trans  &trans  &trans  &trans  &trans
+&trans          &to 0         &to 1         &to 2            &to 3            &trans             &trans  &trans        &trans  &trans  &trans  &trans  &soft_off
+&trans          &trans        &trans        &rgb_ug RGB_EFR  &rgb_ug RGB_TOG  &rgb_ug RGB_EFF    &trans  &out OUT_TOG  &trans  &trans  &trans  &trans
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
     };
 };
