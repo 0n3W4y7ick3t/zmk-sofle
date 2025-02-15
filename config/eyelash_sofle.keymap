@@ -65,6 +65,15 @@
         bindings = <&kp RIGHT_SHIFT>, <&caps_word>;
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        bl {
+            bindings = <&bootloader>;
+            key-positions = <39 51>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
