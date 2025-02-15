@@ -454,3 +454,6 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {type: held}
   - {t: '$$mdi:transfer$$', type: trans}
+combos:
+- p: [39, 51]
+  k: $$mdi:progress-download$$
